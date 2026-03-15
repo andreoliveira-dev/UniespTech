@@ -1,5 +1,7 @@
 # Projeto Uniesp Tech: Sistema de Gestão Acadêmica Escalonável
 
+Chrystian
+
 ## Situação-Problema
 A **Uniesp Tech** herdou um sistema de uma startup que faliu. O código atual é funcional, porém extremamente **frágil**:
 * **Dados Voláteis:** Armazena dados apenas em memória (perde tudo ao reiniciar).

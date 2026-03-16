@@ -18,15 +18,25 @@ public class AlunoController {
     private final AlunoService alunoService;
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<String> cadastrarAluno(@RequestBody @Valid AlunoDto dto) {
+    public ResponseEntity<String> cadastrarAluno(@RequestBody @Valid AlunoDto dto)
+    {
         alunoService.CadstrarAluno(dto);
         return ResponseEntity.ok("O aluno foi cadastrado");
     }
 
-    @GetMapping
-    public ResponseEntity<List<Aluno>> receberListaAlunos() {
+    @GetMapping("/receber")
+    public ResponseEntity<List<Aluno>> receberListaAlunos()
+    {
         List<Aluno> listaAluno = alunoService.ReceberTodosAluno();
 
         return ResponseEntity.ok(listaAluno);
+    }
+
+    @DeleteMapping("/deletar/todos")
+    public ResponseEntity<String> deletarTodosAlunos ()
+    {
+        alunoService.DeletarTodosAlunos();
+
+        return ResponseEntity.ok("Todos os alunos foram deletados");
     }
 }

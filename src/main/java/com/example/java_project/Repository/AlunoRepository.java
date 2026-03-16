@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Long> {
-    boolean findByCPF(String alunoCPF);
+    boolean existsByCPF(String alunoCPF);
+
 }

@@ -11,12 +11,16 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AlunoService {
-    private AlunoRepository repository;
+
+    private final AlunoRepository repository;
 
     public void CadstrarAluno(AlunoDto alunoDto)
     {
-        if (repository.findByCPF(alunoDto.cpf()))
+        if (repository.existsByCPF(alunoDto.cpf()))
             throw new RuntimeException("Esse aluno já foi cadastrado!");
+
+        if (alunoDto.cpf().length() != 11)
+            throw new RuntimeException("O CPF digitado é invalido");
 
         Aluno aluno = new Aluno();
         aluno.setNome(alunoDto.nome());
@@ -26,8 +30,11 @@ public class AlunoService {
 
     public List<Aluno> ReceberTodosAluno()
     {
-        List<Aluno> listaAlunos = repository.findAll();
+        return repository.findAll();
+    }
 
-        return listaAlunos;
+    public void DeletarTodosAlunos()
+    {
+        
     }
 }

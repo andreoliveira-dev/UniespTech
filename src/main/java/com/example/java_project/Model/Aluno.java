@@ -1,6 +1,7 @@
 package com.example.java_project.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 @AllArgsConstructor

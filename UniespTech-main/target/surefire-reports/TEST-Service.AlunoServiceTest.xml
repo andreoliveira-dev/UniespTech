@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Service.AlunoServiceTest" time="0.075" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Service.AlunoServiceTest" time="0.146" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\lucas\AppData\Local\Temp\surefire7611085281652534255\surefirebooter-20260315212544448_3.jar C:\Users\lucas\AppData\Local\Temp\surefire7611085281652534255 2026-03-15T21-25-44_260-jvmRun1 surefire-20260315212544448_1tmp surefire_0-20260315212544448_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\lucas\AppData\Local\Temp\surefire9873672928574928113\surefirebooter-20260316144745659_3.jar C:\Users\lucas\AppData\Local\Temp\surefire9873672928574928113 2026-03-16T14-47-45_328-jvmRun1 surefire-20260316144745659_1tmp surefire_0-20260316144745659_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\lucas\OneDrive\Desktop\UniespTech-main\UniespTech-main\target\test-classes;C:\Users\lucas\OneDrive\Desktop\UniespTech-main\UniespTech-main\target\classes;C:\Users\lucas\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\lucas\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\lucas\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\lucas\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\lucas\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\lucas\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\lucas\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\lucas\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\lucas\AppData\Local\Temp\surefire7611085281652534255\surefirebooter-20260315212544448_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\lucas\AppData\Local\Temp\surefire9873672928574928113\surefirebooter-20260316144745659_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.10+7-LTS"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="naoDeveCadastrarAlunoComNomeVazio" classname="Service.AlunoServiceTest" time="0.032">
+  <testcase name="naoDeveCadastrarAlunoComNomeVazio" classname="Service.AlunoServiceTest" time="0.077">
     <system-out><![CDATA[Não pode ser vazio 
 ]]></system-out>
   </testcase>
@@ -67,6 +67,6 @@
     <system-out><![CDATA[CPF deve ter 11 números
 ]]></system-out>
   </testcase>
-  <testcase name="deveListarAlunoCadastrado" classname="Service.AlunoServiceTest" time="0.004"/>
+  <testcase name="deveListarAlunoCadastrado" classname="Service.AlunoServiceTest" time="0.008"/>
   <testcase name="deveCadastrarAlunoComDadosValidos" classname="Service.AlunoServiceTest" time="0.002"/>
 </testsuite>

@@ -1,6 +1,7 @@
+import config.ConfiguracaoBanco;
 import controller.AlunoController;
 import model.Aluno;
-import repository.AlunoRepositoryMemoria;
+import repository.AlunoRepositoryPostgres;
 import service.AlunoService;
 
 import java.util.List;
@@ -10,7 +11,13 @@ public class SistemaUniesp {
 
     public static void main(String[] args) {
 
-        AlunoRepositoryMemoria repository = new AlunoRepositoryMemoria();
+        ConfiguracaoBanco config = new ConfiguracaoBanco();
+        AlunoRepositoryPostgres repository = new AlunoRepositoryPostgres(
+                config.getUrl(),
+                config.getUsuario(),
+                config.getSenha()
+        );
+
         AlunoService           service    = new AlunoService(repository);
         AlunoController        controller = new AlunoController(service);
 

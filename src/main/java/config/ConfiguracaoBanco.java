@@ -13,6 +13,12 @@ public class ConfiguracaoBanco {
     private final String senha;
 
     public ConfiguracaoBanco() {
+        // Variáveis de ambiente têm prioridade (útil para Docker/produção).
+        // Se não estiverem definidas, cai para o banco.properties.
+        String envUrl     = System.getenv("DB_URL");
+        String envUsuario = System.getenv("DB_USUARIO");
+        String envSenha   = System.getenv("DB_SENHA");
+
         Properties props = new Properties();
         try (InputStream is = getClass().getResourceAsStream(ARQUIVO)) {
             if (is == null) {

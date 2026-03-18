@@ -1,0 +1,34 @@
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: uniesp-db
+    environment:
+      POSTGRES_DB:       uniesp
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: 1404
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: uniesp-app
+    stdin_open: true   # mantém o terminal interativo (Scanner funciona)
+    tty: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_URL:     jdbc:postgresql://postgres:5432/uniesp
+      DB_USUARIO: postgres
+      DB_SENHA:   1404
+
+volumes:
+  postgres_data:

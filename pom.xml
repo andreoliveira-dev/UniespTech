@@ -24,6 +24,13 @@
     <!-- ===== DEPENDÊNCIAS ===== -->
     <dependencies>
 
+        <!-- Driver JDBC do PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
         <!-- Testes unitários com JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -44,6 +51,14 @@
 
     <!-- ===== BUILD E PLUGINS ===== -->
     <build>
+
+        <!-- Garante que banco.properties seja empacotado no .jar -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
         <plugins>
 
             <!-- Compila o projeto -->
@@ -64,20 +79,32 @@
                 <version>3.2.5</version>
             </plugin>
 
-            <!-- Gera o .jar executável -->
+            <!-- Gera o .jar executável com todas as dependências (fat jar) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- Classe principal para executar o .jar -->
                             <mainClass>SistemaUniesp</mainClass>
                         </manifest>
                     </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                     <finalName>uniesp-tech</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>

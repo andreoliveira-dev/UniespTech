@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class ConfiguracaoBanco {
 
+    // Caminho do arquivo dentro do classpath (src/main/resources)
     private static final String ARQUIVO = "/banco.properties";
 
     private final String url;
@@ -13,12 +14,15 @@ public class ConfiguracaoBanco {
     private final String senha;
 
     public ConfiguracaoBanco() {
-        // Variáveis de ambiente têm prioridade (útil para Docker/produção).
-        // Se não estiverem definidas, cai para o banco.properties.
+
+        // Tenta ler as credenciais das variáveis de ambiente.
+        // Útil em produção, Docker ou CI sem expor senha no código.
         String envUrl     = System.getenv("DB_URL");
         String envUsuario = System.getenv("DB_USUARIO");
         String envSenha   = System.getenv("DB_SENHA");
 
+        // Carrega o banco.properties como fallback,
+        // caso as variáveis de ambiente não estejam definidas.
         Properties props = new Properties();
         try (InputStream is = getClass().getResourceAsStream(ARQUIVO)) {
             if (is == null) {
@@ -30,9 +34,11 @@ public class ConfiguracaoBanco {
         } catch (IOException e) {
             throw new RuntimeException("Erro ao ler configurações do banco: " + e.getMessage(), e);
         }
-        this.url     = props.getProperty("db.url");
-        this.usuario = props.getProperty("db.usuario");
-        this.senha   = props.getProperty("db.senha");
+
+        // Prioridade: variável de ambiente > banco.properties
+        this.url     = envUrl     != null ? envUrl     : props.getProperty("db.url");
+        this.usuario = envUsuario != null ? envUsuario : props.getProperty("db.usuario");
+        this.senha   = envSenha   != null ? envSenha   : props.getProperty("db.senha");
     }
 
     public String getUrl()     { return url;     }

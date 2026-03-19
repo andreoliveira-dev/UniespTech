@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build-e-testes:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Clonar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Compilar e rodar testes
+        run: mvn verify --no-transfer-progress
+
+      - name: Publicar relatório de testes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-testes
+          path: target/surefire-reports/

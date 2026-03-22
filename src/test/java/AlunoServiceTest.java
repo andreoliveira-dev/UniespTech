@@ -11,7 +11,7 @@ public class AlunoServiceTest {
     @BeforeEach
     void setUp() {
         service = new AlunoService();
-        service.deletarTodos(); 
+        service.deletarTodos();
     }
 
     @Test

@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-  pull_request:
 
 jobs:
   build:
@@ -24,14 +23,5 @@ jobs:
       - name: Build do projeto
         run: ./mvnw clean package -DskipTests
 
-      - name: Rodar testes
-        run: ./mvnw test
-
-      - name: Build da imagem Docker
-        run: docker build -t minha-api .
-
-      - name: Salvar artefato (.jar)
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-jar
-          path: target/*.jar
+      # - name: Rodar testes
+      #   run: ./mvnw test

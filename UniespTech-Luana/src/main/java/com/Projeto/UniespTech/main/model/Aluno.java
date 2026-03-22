@@ -20,8 +20,8 @@ public class Aluno {
         private Long id;
 
         @Column(nullable = false)
-        private String Nome;
+        private String nome;
 
         @Column(nullable = false, unique = true)
-        private String CPF;
+        private String cpf;
 }

@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/controller/AlunoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/controller/AlunoController.java" afterDir="false" />
+    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="imports e properties">
       <change beforePath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/model/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/repository/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/repository/AlunoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/service/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UniespTech-Luana/src/main/java/com/Projeto/UniespTech/main/service/AlunoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UniespTech-Luana/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UniespTech-Luana/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774040364875</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="imports e properties">
+      <option name="closed" value="true" />
+      <created>1774143294323</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1774143294323</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -215,6 +220,7 @@
     <MESSAGE value="banco" />
     <MESSAGE value="testes" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="imports e properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="imports e properties" />
   </component>
 </project>

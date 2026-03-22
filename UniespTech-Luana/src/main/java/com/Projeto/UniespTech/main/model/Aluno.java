@@ -2,6 +2,7 @@ package com.Projeto.UniespTech.main.model;
 
 import com.Projeto.UniespTech.main.dto.AlunoDTO;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 @AllArgsConstructor

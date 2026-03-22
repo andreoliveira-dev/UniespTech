@@ -29,4 +29,7 @@ public class AlunoService {
         List<Aluno> listadeAlunos = alunoRepository.findAll();
         return listadeAlunos;
     }
+
+    public void deletarAlunos() {}
+}
 }

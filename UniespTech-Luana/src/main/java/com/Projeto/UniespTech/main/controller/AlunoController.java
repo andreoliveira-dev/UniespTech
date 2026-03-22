@@ -16,17 +16,24 @@ import java.util.List;
 public class AlunoController {
     private final AlunoService alunoService;
 
-    @GetMapping
+    @GetMapping("/listAlu")
     public ResponseEntity<List<Aluno>> listadeAlunos(){
         List<Aluno> listaDosAlunos = alunoService.receberAlunosCadastro();
 
         return ResponseEntity.ok(listaDosAlunos);
     }
 
-    @PostMapping
+    @PostMapping ("/cadastrar")
     public ResponseEntity<String> cadastrarAluno(@RequestBody @Valid AlunoDTO alunoDTO){
-       alunoService.cadastrarAlunos(alunoDTO);
-       return ResponseEntity.ok("Aluno cadastrado com sucesso!");
+        alunoService.cadastrarAlunos(alunoDTO);
+        return ResponseEntity.ok("Aluno cadastrado com sucesso!");
     }
 
+    @DeleteMapping("/deletar/todos")
+    public ResponseEntity<String> deletarAlunos ()
+    {
+        alunoService.deletarAlunos();
+
+        return ResponseEntity.ok("Todos os alunos deletados com sucesso!");
+    }
 }

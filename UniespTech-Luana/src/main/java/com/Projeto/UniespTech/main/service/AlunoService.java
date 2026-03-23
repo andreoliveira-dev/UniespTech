@@ -30,6 +30,7 @@ public class AlunoService {
         return listadeAlunos;
     }
 
-    public void deletarAlunos() {}
-}
+    public void deletarAlunos() {
+        alunoRepository.deleteAll();
+    }
 }

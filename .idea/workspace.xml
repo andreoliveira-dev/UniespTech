@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="db e correcoes">
-      <change afterPath="$PROJECT_DIR$/.idea/UniespTech-feat-LuanaJessica (2).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment=".idea">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +57,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\.idea" />
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\UniespTech-Luana\src\main\java\com\Projeto\UniespTech\main" />
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\UniespTech-Luana\src\main\resources" />
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica" />
@@ -223,12 +222,19 @@
       <option name="project" value="LOCAL" />
       <updated>1774231492454</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary=".idea">
+      <option name="closed" value="true" />
+      <created>1774231790212</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1774231790212</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="maven" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="aluno" />
     <MESSAGE value="dto, repository, service" />
     <MESSAGE value="pom" />
@@ -239,6 +245,7 @@
     <MESSAGE value="." />
     <MESSAGE value="imports e properties" />
     <MESSAGE value="db e correcoes" />
-    <option name="LAST_COMMIT_MESSAGE" value="db e correcoes" />
+    <MESSAGE value=".idea" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea" />
   </component>
 </project>

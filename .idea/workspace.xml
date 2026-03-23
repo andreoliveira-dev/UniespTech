@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment=".idea">
+    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="serv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,21 +40,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/LuanaJessica",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/.idea",
-    "onboarding.tips.debug.path": "C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/untitled/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/LuanaJessica&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/.idea&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/untitled/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\.idea" />
@@ -230,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774231790212</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="serv">
+      <option name="closed" value="true" />
+      <created>1774232730769</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1774232730769</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -246,6 +254,7 @@
     <MESSAGE value="imports e properties" />
     <MESSAGE value="db e correcoes" />
     <MESSAGE value=".idea" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea" />
+    <MESSAGE value="serv" />
+    <option name="LAST_COMMIT_MESSAGE" value="serv" />
   </component>
 </project>

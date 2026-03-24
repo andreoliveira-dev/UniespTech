@@ -1,3 +1,4 @@
+Config\DatabaseConnection.class
 Controller\AlunoController.class
 Service\AlunoService.class
 Repository\AlunoRepository.class

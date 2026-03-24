@@ -5,7 +5,7 @@ import Model.Aluno;
 
 import java.util.Scanner;
 
-public class AlunoController {
+public class  AlunoController {
 
     private AlunoService service = new AlunoService();
 

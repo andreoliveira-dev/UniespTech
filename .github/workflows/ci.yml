@@ -25,10 +25,11 @@ jobs:
       # Build + Testes
       - name: Build com Maven
         run: mvn clean package
+        working-directory: ./UniespTech-main
 
       # Salvar o .jar como artefato
       - name: Upload do JAR
         uses: actions/upload-artifact@v4
         with:
           name: app-jar
-          path: target/*.jar
+          path: UniespTech-main/target/*.jar

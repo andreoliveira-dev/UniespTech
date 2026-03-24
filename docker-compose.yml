@@ -5,6 +5,7 @@ services:
   postgres:
     image: postgres:16
     container_name: postgres-container
+    restart: always
     environment:
       POSTGRES_DB: banco_muito_irado
       POSTGRES_USER: postgres
@@ -15,6 +16,7 @@ services:
   app:
     build: .
     container_name: minha-api
+    restart: always
     ports:
       - "8080:8080"
     depends_on:

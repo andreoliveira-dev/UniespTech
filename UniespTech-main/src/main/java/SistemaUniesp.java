@@ -21,13 +21,33 @@ public class SistemaUniesp {
             logger.error("❌ Falha ao iniciar servidor HTTP", e);
         }
 
-        // Inicia o sistema principal (console)
-        logger.info("💻 Iniciando interface de console");
-        AlunoController controller = new AlunoController();
-        controller.iniciar();
+        // Verifica se está rodando no Render ou ambiente cloud
+        boolean isCloud = System.getenv("RENDER") != null || System.getenv("PORT") != null;
 
-        // Quando o console fechar, para o servidor health check
-        HealthController.stopHealthServer();
+        if (!isCloud) {
+            // Modo local: inicia o console
+            logger.info("💻 Iniciando interface de console (modo local)");
+            AlunoController controller = new AlunoController();
+            controller.iniciar();
+
+            // Quando o console fechar, para o servidor health check
+            HealthController.stopHealthServer();
+        } else {
+            // Modo cloud: mantém apenas o servidor HTTP rodando
+            logger.info("☁️ Modo cloud detectado - Mantendo apenas servidor HTTP");
+            logger.info("✅ Sistema pronto! Acesse /health para verificar status");
+
+            // Mantém a aplicação rodando
+            while (true) {
+                try {
+                    Thread.sleep(60000); // Aguarda 1 minuto
+                    logger.debug("🔄 Heartbeat - Sistema funcionando");
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+        }
+
         logger.info("🛑 Sistema Uniesp Tech - Encerrando aplicação");
     }
 }

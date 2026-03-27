@@ -16,12 +16,13 @@ public class HealthController {
     private static HttpServer server;
 
     public static void startHealthServer(int port) throws IOException {
-        server = HttpServer.create(new InetSocketAddress(port), 0);
+        // IMPORTANTE: usar "0.0.0.0" para aceitar conexões externas
+        server = HttpServer.create(new InetSocketAddress("0.0.0.0", port), 0);
         server.createContext("/health", new HealthHandler());
         server.setExecutor(Executors.newCachedThreadPool());
         server.start();
         System.out.println("✅ Health check server rodando na porta " + port);
-        System.out.println("📍 Endpoint: http://localhost:" + port + "/health");
+        System.out.println("📍 Endpoint: http://0.0.0.0:" + port + "/health");
     }
 
     public static void stopHealthServer() {
@@ -37,7 +38,7 @@ public class HealthController {
             String response;
             int statusCode;
 
-            // Configurar CORS para permitir acesso de qualquer origem
+            // Configurar CORS e headers
             exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
             exchange.getResponseHeaders().set("Content-Type", "application/json");
 

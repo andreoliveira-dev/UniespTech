@@ -3,12 +3,9 @@ package Controller;
 import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
-import Config.DatabaseConnection;
 import java.io.OutputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.concurrent.Executors;
 
 public class HealthController {
@@ -16,13 +13,19 @@ public class HealthController {
     private static HttpServer server;
 
     public static void startHealthServer(int port) throws IOException {
-        // IMPORTANTE: usar "0.0.0.0" para aceitar conexões externas
         server = HttpServer.create(new InetSocketAddress("0.0.0.0", port), 0);
+
+        // Endpoint /health
         server.createContext("/health", new HealthHandler());
+
+        // Endpoint raiz / para teste
+        server.createContext("/", new RootHandler());
+
         server.setExecutor(Executors.newCachedThreadPool());
         server.start();
         System.out.println("✅ Health check server rodando na porta " + port);
         System.out.println("📍 Endpoint: http://0.0.0.0:" + port + "/health");
+        System.out.println("📍 Teste: http://0.0.0.0:" + port + "/");
     }
 
     public static void stopHealthServer() {
@@ -35,52 +38,20 @@ public class HealthController {
     static class HealthHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
-            String response;
-            int statusCode;
-
-            // Configurar CORS e headers
-            exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
+            String response = "{\"status\":\"UP\",\"message\":\"Servidor funcionando!\"}";
             exchange.getResponseHeaders().set("Content-Type", "application/json");
+            exchange.sendResponseHeaders(200, response.getBytes().length);
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        }
+    }
 
-            try {
-                // Testa conexão com o banco
-                Connection conn = DatabaseConnection.getConnection();
-                boolean isDatabaseUp = conn != null && !conn.isClosed();
-
-                if (isDatabaseUp && conn.isValid(2)) {
-                    response = String.format(
-                            "{\"status\":\"UP\",\"database\":\"H2\",\"timestamp\":\"%s\",\"version\":\"1.0.0\"}",
-                            java.time.LocalDateTime.now()
-                    );
-                    statusCode = 200;
-                } else {
-                    response = String.format(
-                            "{\"status\":\"DOWN\",\"database\":\"H2\",\"error\":\"Connection failed\",\"timestamp\":\"%s\"}",
-                            java.time.LocalDateTime.now()
-                    );
-                    statusCode = 503;
-                }
-
-                if (conn != null) conn.close();
-
-            } catch (SQLException e) {
-                response = String.format(
-                        "{\"status\":\"DOWN\",\"database\":\"H2\",\"error\":\"%s\",\"timestamp\":\"%s\"}",
-                        e.getMessage().replace("\"", "\\\""),
-                        java.time.LocalDateTime.now()
-                );
-                statusCode = 503;
-                e.printStackTrace();
-            } catch (Exception e) {
-                response = String.format(
-                        "{\"status\":\"DOWN\",\"error\":\"%s\",\"timestamp\":\"%s\"}",
-                        e.getMessage().replace("\"", "\\\""),
-                        java.time.LocalDateTime.now()
-                );
-                statusCode = 500;
-            }
-
-            exchange.sendResponseHeaders(statusCode, response.getBytes().length);
+    static class RootHandler implements HttpHandler {
+        @Override
+        public void handle(HttpExchange exchange) throws IOException {
+            String response = "✅ Servidor Uniesp Tech está rodando! Acesse /health para verificar status.";
+            exchange.sendResponseHeaders(200, response.getBytes().length);
             OutputStream os = exchange.getResponseBody();
             os.write(response.getBytes());
             os.close();

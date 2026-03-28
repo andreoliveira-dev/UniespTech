@@ -28,10 +28,12 @@ Sistema de gestão acadêmica desenvolvido para a disciplina de DevOps. O projet
 ## 📸 Evidências de Funcionamento
 
 ### Servidor Online
-![Servidor Online](https://prnt.sc/G9nu9AvCt5ed)
+![Servidor Online](<img width="922" height="456" alt="uniesptechacademico" src="https://github.com/user-attachments/assets/49009a01-2aa3-478a-8afb-c69c35ebfd67" />
+)
 
 ### Health Check
-![Health Check](https://prnt.sc/NQPk-5vA74Wl)
+![Health Check](<img width="1030" height="456" alt="health" src="https://github.com/user-attachments/assets/1fc1eba9-e125-4322-a49d-554a69ac622d" />
+)
 
 ## 🔄 Pipeline CI/CD
 

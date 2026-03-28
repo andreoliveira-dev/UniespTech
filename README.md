@@ -27,20 +27,11 @@ Sistema de gestão acadêmica desenvolvido para a disciplina de DevOps. O projet
 
 ## 📸 Evidências de Funcionamento
 
-### Servidor Online
-![Servidor Online](<img width="922" height="456" alt="uniesptechacademico" src="https://github.com/user-attachments/assets/49009a01-2aa3-478a-8afb-c69c35ebfd67" />
-)
+### Servidor Online (https://prnt.sc/NQPk-5vA74Wl)
 
-### Health Check
-![Health Check](<img width="1030" height="456" alt="health" src="https://github.com/user-attachments/assets/1fc1eba9-e125-4322-a49d-554a69ac622d" />
-)
+### Health Check(https://prnt.sc/NQPk-5vA74Wl)
 
-## 🔄 Pipeline CI/CD
-
-| Pipeline | Status |
-|----------|--------|
-| **CI (Build e Testes)** | [![CI](https://github.com/lucasaccioly/UniespTech-main/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasaccioly/UniespTech-main/actions/workflows/ci.yml) |
-| **CD (Deploy no Render)** | [![CD](https://github.com/lucasaccioly/UniespTech-main/actions/workflows/cd.yml/badge.svg)](https://github.com/lucasaccioly/UniespTech-main/actions/workflows/cd.yml) |
+### Pipeline CI/CD(https://prnt.sc/X5Tsnp9vwJ7m)
 
 ## 🧪 Chaos Test: Simulação de Queda do Banco
 
@@ -54,15 +45,15 @@ O **Chaos Test** valida a resiliência da aplicação, verificando se o health c
 2. Altere a URL do banco para um valor inválido:
    ```java
    private static final String URL = "jdbc:h2:./banco_inexistente";
-RETORNO JSON:
-    {
-  "status": "DOWN",
-  "database": "H2",
-  "error": "Connection failed or invalid"
+
+RETORNO JSON
+{
+"status": "DOWN",
+"database": "H2",
+"error": "Connection failed or invalid"
 }
 
 👨‍💻 Autor
 Lucas Accioly
 
 GitHub: @lucasaccioly
-

@@ -39,8 +39,6 @@ O **Chaos Test** valida a resiliência da aplicação, verificando se o health c
 
 ### Como Reproduzir o Teste
 
-#### Opção 1 – Simular falha na string de conexão (mais simples)
-
 1. Acesse o arquivo `src/main/java/Config/DatabaseConnection.java`.
 2. Altere a URL do banco para um valor inválido:
    ```java

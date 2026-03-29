@@ -1,0 +1,38 @@
+name: CD - Deploy to Render
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build with Maven
+        run: mvn clean package
+        working-directory: ./UniespTech-main
+
+      - name: Run tests
+        run: mvn test
+        working-directory: ./UniespTech-main
+
+      - name: Build Docker image
+        run: |
+          docker build -t uniesp-academico:${{ github.sha }} .
+          docker tag uniesp-academico:${{ github.sha }} uniesp-academico:latest
+        working-directory: ./UniespTech-main
+
+      - name: Deploy to Render
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}

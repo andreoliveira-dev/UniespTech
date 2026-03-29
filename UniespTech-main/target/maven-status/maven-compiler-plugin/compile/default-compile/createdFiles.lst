@@ -1,0 +1,8 @@
+Controller\AlunoController.class
+Service\AlunoService.class
+Controller\HealthController.class
+Repository\AlunoRepository.class
+Config\DatabaseConnection.class
+Model\Aluno.class
+SistemaUniesp.class
+Controller\HealthController$HealthHandler.class

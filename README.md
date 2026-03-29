@@ -1,65 +1,57 @@
-# Projeto Uniesp Tech: Sistema de Gestão Acadêmica Escalonável
+# 🎓 Uniesp Tech - Sistema de Gestão Acadêmica
 
-## Situação-Problema
-A **Uniesp Tech** herdou um sistema de uma startup que faliu. O código atual é funcional, porém extremamente **frágil**:
-* **Dados Voláteis:** Armazena dados apenas em memória (perde tudo ao reiniciar).
-* **Sem Qualidade:** Não possui nenhum teste unitário ou de integração.
-* **Deploy Artesanal:** O processo é manual (copiar o `.jar` via FTP).
-* **Blindness (Cegueira):** Ninguém sabe se o sistema está online ou offline até que um usuário reclame.
+Sistema de gestão acadêmica desenvolvido para a disciplina de DevOps. O projeto aplica boas práticas de qualidade, containerização, integração contínua e monitoramento.
 
----
+## 🚀 Tecnologias Utilizadas
+- **Java 21**
+- **H2 Database** (persistência em arquivo)
+- **Maven** (gerenciamento de dependências e build)
+- **Docker** (containerização)
+- **GitHub Actions** (CI/CD)
+- **SLF4J** (logs estruturados)
+- **Render** (deploy em nuvem)
 
-## O Objetivo
-Em **3 semanas**, vocês devem reconstruir a base deste sistema, aplicar persistência real, containerizar a aplicação e criar um fluxo de CI/CD profissional que impeça bugs de chegarem em produção.
+## 🌐 Aplicação em Produção
+- **URL Principal:** [https://uniesp-tech-academico.onrender.com](https://uniesp-tech-academico.onrender.com)
+- **Health Check:** [https://uniesp-tech-academico.onrender.com/health](https://uniesp-tech-academico.onrender.com/health)
 
----
+## ✅ Funcionalidades
+- Cadastro de alunos com validação de CPF (11 dígitos) e nome não vazio.
+- Listagem de alunos cadastrados.
+- Remoção em massa de todos os registros.
+- Persistência dos dados em banco H2.
+- Endpoint de **health check** (`/health`) para monitoramento.
+- **Logs estruturados** com níveis (INFO, WARN, ERROR) e saída em arquivo.
+- Pipeline **CI/CD** automatizada com GitHub Actions.
+- **Deploy contínuo** no Render via Docker.
 
-## Cronograma de Desenvolvimento
+## 📸 Evidências de Funcionamento
 
-### Semana 1: Refatoração, Qualidade e Governança (Plan, Code, Test)
-Nesta fase, o foco é "organizar a casa" e garantir que o código seja testável e modular.
+### Servidor Online (https://prnt.sc/NQPk-5vA74Wl)
 
-* **Desafio Java:**
-    * Refatorar o código "macarrônico" original separando-o em camadas: `Controller`, `Service`, `Model` e `Repository`.
-    * Implementar validações rigorosas (ex: CPF com 11 dígitos, campos obrigatórios não vazios).
-* **Desafio DevOps:**
-    * **Maven:** Configurar o `pom.xml` para gerenciar dependências e o ciclo de vida do projeto.
-    * **Testes:** Criar os primeiros Testes Unitários com **JUnit 5** para as regras de negócio.
-    * **Governança:** Criar um quadro Kanban (GitHub Projects). Proibido o Push direto na `main`; o código só entra via **Pull Request** com Code Review de um colega.
+### Health Check(https://prnt.sc/NQPk-5vA74Wl)
 
-** Entrega:** Repositório organizado, código limpo e suite de testes rodando localmente.
+### Pipeline CI/CD(https://prnt.sc/X5Tsnp9vwJ7m)
 
----
+## 🧪 Chaos Test: Simulação de Queda do Banco
 
-### Semana 2: Persistência e Containerização (Build, Release)
-Agora o sistema precisa sobreviver ao reinício e ser portável para qualquer ambiente.
+O **Chaos Test** valida a resiliência da aplicação, verificando se o health check detecta corretamente a indisponibilidade do banco de dados.
 
-* **Desafio Java:**
-    * Substituir o armazenamento em `ArrayList` por persistência real.
-    * Implementar **H2 Database** (em arquivo) ou **PostgreSQL** via JDBC ou Spring Data JPA.
-* **Desafio DevOps:**
-    * **Docker:** Criar um `Dockerfile` otimizado para a aplicação (Multi-stage build).
-    * **CI (Continuous Integration):** Configurar **GitHub Actions** para que, a cada Push/PR, o sistema execute o Build e os Testes automaticamente.
-    * **Artifacts:** O build bem-sucedido deve gerar uma imagem Docker ou um artefato `.jar` versionado no GitHub.
+### Como Reproduzir o Teste
 
-** Entrega:** Pipeline de CI configurado (build verde) e aplicação rodando dentro de um container Docker.
+1. Acesse o arquivo `src/main/java/Config/DatabaseConnection.java`.
+2. Altere a URL do banco para um valor inválido:
+   ```java
+   private static final String URL = "jdbc:h2:./banco_inexistente";
 
----
+RETORNO JSON
+{
+"status": "DOWN",
+"database": "H2",
+"error": "Connection failed or invalid"
+}
 
-### Semana 3: Cloud, Deploy e Monitoramento (Deploy, Operate, Monitor)
-Hora de colocar o sistema no mundo real e garantir que ele continue de pé e saudável.
+👨‍💻 Autor
+Lucas Accioly
 
-* **Desafio Java:**
-    * Implementar um endpoint de **Health Check** (ex: `/health`) que verifica a saúde do app e da conexão com o banco.
-    * Implementar logs estruturados (Log4j ou SLF4J) para monitorar tentativas de cadastro ou erros críticos.
-* **Desafio DevOps:**
-    * **CD (Continuous Deployment):** Configurar o deploy automático para uma nuvem (Render, Railway ou Fly.io).
-    * **Operação:** Realizar um "Chaos Test" (simular queda do banco e observar como a aplicação loga o erro).
-    * **Documentação:** Finalizar o README com instruções de uso e evidências do monitoramento.
-
-** Entrega:** Link da aplicação rodando em produção com fluxo de entrega contínua ativo.
-
----
-
-## Semana 4: Prova Prática
-Aplicação de uma *Hotfix de Emergência* em tempo real para avaliar o domínio sobre o fluxo DevOps construído.
+GitHub: @lucasaccioly

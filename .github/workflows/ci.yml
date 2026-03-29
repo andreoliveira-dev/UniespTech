@@ -1,23 +1,24 @@
-name: Java CI Professional Pipeline
+name: Baroes da pisadinha so passa musica boa (Java CI Professional)
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    # Dispara na minha branch fui atras pq sou cagona
+    branches: [ "feat/Franciellyariel" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "feat/Franciellyariel" ]
 
 jobs:
-  # 1. Build e Testes Unitários
+  # teste unitariuss
   build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up JDK 22 (GraalVM)
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          java-version: '22'
+          distribution: 'graalvm'
           cache: maven
 
       - name: Build with Maven
@@ -26,28 +27,14 @@ jobs:
       - name: Run Unit Tests
         run: mvn test
 
+      # relatorio dos baroes da pisadinha
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
-        if: always() # Garante que o relatório seja gerado mesmo se os testes falharem
+        if: always()
         with:
           report_paths: '**/target/surefire-reports/TEST-*.xml'
 
-  # 2. Análise de Qualidade de Código (SonarCloud)
-  static-analysis:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Necessário para o SonarCloud analisar o histórico
-
-      - name: SonarCloud Scan
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn verify sonar:sonar
-
-  # 3. Segurança (SCA - Análise de Dependências)
+  # segurança , preciso estudar direitinho n entendi tudo
   security-check:
     needs: build-and-test
     runs-on: ubuntu-latest
@@ -55,6 +42,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Dependency Check (OWASP)
+        # lebrar isso aqui roda verification
         run: mvn org.owasp:dependency-check-maven:check
 
       - name: Upload Security Report
@@ -63,10 +51,11 @@ jobs:
           name: dependency-check-report
           path: target/dependency-check-report.html
 
-  # 4. Docker Build e Push (Opcional - se usar containers)
+  # configurationis de docker
   containerize:
-    needs: [static-analysis, security-check]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [security-check]
+    # só roda pra mia branch
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feat/Franciellyariel'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

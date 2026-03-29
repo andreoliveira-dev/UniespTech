@@ -1,42 +1,39 @@
-package com.example.UniespTechhh.service;//para n se assustar veja o readme primeiro ksksk coloquei uma mensagem bem legal quando esse carrosel roda
+package com.example.UniespTechhh.service;
 
 import com.example.UniespTechhh.model.Usuario;
 import com.example.UniespTechhh.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List; //Importante pra lista funcionar n esquecer de botar em outras coisas eu de dps
+import java.util.List;
 
 @Service
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository repo; //O cara que manda e desmanda no banco de dados
+    private UsuarioRepository repo;
 
-    //Salva o meliante com as regrinhas que a gente fez
     public Usuario salvar(Usuario user) {
-        //Se o cara n disse o que e a gente nem conversa n somos advinhos pra saber coisa sem ter informacao
-        if (user.getNivel() == null) {
-            throw new RuntimeException("Esqueceu o nível, foi? É Aluno ou Professor?");
-        }
+        // Nivel de acessinhooo
+        if (user.getPerfil() == null) throw new RuntimeException("Escolha se é Aluno ou Professor!");
 
-        //Logica que eu tava doida pra testar e um trem de níveis ado a ado cada um no seu quadrado
-        if (user.getNivel().equalsIgnoreCase("ALUNO")) {
-            user.setDisciplina(null); //Aluno não dá aula so estuda ou tenta que nem eu
-        } else if (user.getNivel().equalsIgnoreCase("PROFESSOR")) {
-            user.setMatricula(null); //Professor ja passou da fase de ter matricula de aluno
-        }
+        // Ado a ado, minha perna desgramado!" Cada um no seu quadrado" kskks simples
+        if (user.getPerfil().toString().equals("ALUNO")) user.setDisciplina(null);
+        else user.setMatricula(null);
 
-        return repo.save(user); //Salva no banco e fé no pai que o dado sai
+        return repo.save(user);
+    }
+    public Usuario atualizar(Long id, Usuario user) {
+        // Se o 'user' já vier com um ID que existe no banco,
+        // o Spring faz o Update automaticamente.
+        return repo.save(user);
     }
 
-    //Esse aqui é o listarTodos que o controller precisa pra mostrar oq tem ali dentro
     public List<Usuario> listarTodos() {
-        return repo.findAll(); //Puxa as povas todas que tá salva na tabela
+        return repo.findAll();
     }
 
-    //O proprio thanos
-    public void deletarTudo() {
-        repo.deleteAll(); //Apaga geral então cuidado(Provavel que vou mudar )
+    // AQUI: Deletar apenas uma pessoa (O Sniper)
+    public void deletarPorId(Long id) {
+        repo.deleteById(id); // O Spring já faz a busca e deleta pra você em 1 linha!
     }
 }

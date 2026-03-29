@@ -1,5 +1,4 @@
-package com.example.UniespTechhh;//para n se assustar veja o readme primeiro ksksk coloquei uma mensagem bem legal quando esse carrosel roda
-
+package com.example.UniespTechhh;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

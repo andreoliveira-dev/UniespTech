@@ -1,5 +1,5 @@
 
-Argumento sem polimento e todo torto
+Argumento sem polimento e todo torto(Deu erro por conta dos meus comentarios eu acho)
 (Maior argumento pra estar tão ruim, to com sono )
 
 Escolhi o java 21 por ser a mais estável

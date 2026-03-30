@@ -19,19 +19,27 @@ jobs:
           distribution: 'graalvm'
           cache: maven
 
+
       - name: Permission for Maven Wrapper
-        run: chmod +x mvnw
+        run: chmod +x UniespTech/mvnw
+
 
       - name: Build with Maven
         run: ./mvnw clean compile
+        working-directory: ./UniespTech
 
       - name: Run Unit Tests
         run: ./mvnw test
+        working-directory: ./UniespTech
 
   containerize:
     needs: [build-and-test]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
 
@@ -48,7 +56,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          push: true
 
+          context: ./UniespTech
+          file: ./UniespTech/Dockerfile
+          push: true
           tags: ghcr.io/andreoliveira-dev/uniesptech:latest

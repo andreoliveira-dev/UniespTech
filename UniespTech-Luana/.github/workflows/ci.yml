@@ -27,16 +27,16 @@ jobs:
         run: docker build -t uniesp-tech:${{ github.sha }} .
 
       - name: Exportar imagem
-        run: docker save uniesp-tech:${{ github.sha }} -o uniesp-tech.tar
+        run: docker save uniesp-tech:${{ github.sha }} -o uniesp-tech-${{ github.sha }}.tar
 
       - name: Upload da imagem Docker
         uses: actions/upload-artifact@v4
         with:
-          name: docker-image
-          path: uniesp-tech.tar
+          name: docker-image-${{ github.sha }}
+          path: uniesp-tech-${{ github.sha }}.tar
 
       - name: Upload do JAR
         uses: actions/upload-artifact@v4
         with:
-          name: app-jar
+          name: app-jar-${{ github.sha }}
           path: target/*.jar

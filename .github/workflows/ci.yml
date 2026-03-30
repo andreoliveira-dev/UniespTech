@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "main", "feat/Franciellyariel" ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -19,24 +22,21 @@ jobs:
           distribution: 'graalvm'
           cache: maven
 
-
       - name: Permission for Maven Wrapper
-        run: chmod +x UniespTech/mvnw
 
+        run: chmod +x mvnw
 
       - name: Build with Maven
+
         run: ./mvnw clean compile
-        working-directory: ./UniespTech
 
       - name: Run Unit Tests
         run: ./mvnw test
-        working-directory: ./UniespTech
 
   containerize:
     needs: [build-and-test]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
       packages: write
@@ -57,7 +57,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
 
-          context: ./UniespTech
-          file: ./UniespTech/Dockerfile
+          context: .
+          file: ./Dockerfile
           push: true
-          tags: ghcr.io/andreoliveira-dev/uniesptech:latest
+          tags: ghcr.io/${{ github.repository_owner }}/uniesptech:latest

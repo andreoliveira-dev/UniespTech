@@ -8,9 +8,9 @@
 		<version>4.0.3</version>
 		<relativePath/> </parent>
 	<groupId>com.example</groupId>
-	<artifactId>UniespTechhh</artifactId>
+	<artifactId>UniespTech</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UniespTechhh</name>
+	<name>UniespTech</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

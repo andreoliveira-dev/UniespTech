@@ -13,16 +13,17 @@ import java.util.List;
 public class AlunoService {
     private final AlunoRepository alunoRepository;
 
-    public void cadastrarAlunos(AlunoDTO alunoDTO) {
+    public Aluno cadastrarAlunos(AlunoDTO alunoDTO) {
 
-        if(alunoRepository.findByCPF(alunoDTO.cpf()))
-            throw new RuntimeException("Aluno já cadastrado!");
+        if (alunoRepository.existsByCPF(alunoDTO.cpf())) {
+            throw new IllegalArgumentException("Aluno já cadastrado!");
+        }
 
         Aluno aluno = new Aluno();
         aluno.setNome(alunoDTO.nome());
-        aluno.setCPF(alunoDTO.cpf());
-        alunoRepository.save(aluno);
+        aluno.setCpf(alunoDTO.cpf());
 
+        return alunoRepository.save(aluno);
     }
 
     public List<Aluno> receberAlunosCadastro() {

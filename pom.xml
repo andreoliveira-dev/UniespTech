@@ -100,6 +100,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.projeto.uniesptech.main.JavaProjectApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,4 +1,4 @@
-package com.Projeto.UniespTech.main.model;
+package com.projeto.uniespTech.main.model;
 
 import com.Projeto.UniespTech.main.dto.AlunoDTO;
 import jakarta.persistence.*;

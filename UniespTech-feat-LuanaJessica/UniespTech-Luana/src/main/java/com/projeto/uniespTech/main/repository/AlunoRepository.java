@@ -1,4 +1,4 @@
-package com.Projeto.UniespTech.main.repository;
+package com.projeto.uniespTech.main.repository;
 
 
 import com.Projeto.UniespTech.main.model.Aluno;

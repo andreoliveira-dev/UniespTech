@@ -1,4 +1,4 @@
-package com.Projeto.UniespTech.main.service;
+package com.projeto.uniespTech.main.service;
 
 import com.Projeto.UniespTech.main.dto.AlunoDTO;
 import com.Projeto.UniespTech.main.model.Aluno;

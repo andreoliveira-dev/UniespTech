@@ -1,4 +1,4 @@
-package com.Projeto.UniespTech.main.dto;
+package com.projeto.uniespTech.main.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

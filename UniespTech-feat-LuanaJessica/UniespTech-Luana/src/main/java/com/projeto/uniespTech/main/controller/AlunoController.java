@@ -1,4 +1,4 @@
-package com.Projeto.UniespTech.main.controller;
+package com.projeto.uniespTech.main.controller;
 
 import com.Projeto.UniespTech.main.dto.AlunoDTO;
 import com.Projeto.UniespTech.main.model.Aluno;

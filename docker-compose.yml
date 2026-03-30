@@ -4,8 +4,8 @@ services:
     image: postgres:15
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: manudb  # Coloque a senha que você usa no seu banco
+      POSTGRES_USER: {POSTGRES_USER}
+      POSTGRES_PASSWORD: {POSTGRES_PASSWORD}  # Coloque a senha que você usa no seu banco
       POSTGRES_DB: UniespTech
     ports:
       - "5433:5432"
@@ -20,5 +20,5 @@ services:
     environment:
       # Repare que aqui usamos "db" em vez de "localhost"
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/UniespTech
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: manudb
+      SPRING_DATASOURCE_USERNAME: {SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: {SPRING_DATASOURCE_PASSWORD}

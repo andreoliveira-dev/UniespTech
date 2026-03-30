@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="CI" />
+    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="CI">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +48,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/LuanaJessica",
+    "git-widget-placeholder": "feat/luana-jessica",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/UniespTech-Luana",
     "onboarding.tips.debug.path": "C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/untitled/src/main/java/org/example/Main.java",

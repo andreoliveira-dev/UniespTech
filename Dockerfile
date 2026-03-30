@@ -3,7 +3,7 @@ FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
 WORKDIR /app
 
-COPY UniespTech-Luana .
+COPY UniespTech-feat-LuanaJessica/UniespTech-Luana .
 
 RUN mvn clean package -DskipTests
 

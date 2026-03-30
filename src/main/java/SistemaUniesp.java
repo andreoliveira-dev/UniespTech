@@ -1,11 +1,7 @@
-import controller.AlunoController;
+import controller.HealthController;
 
 public class SistemaUniesp {
-
     public static void main(String[] args) {
-
-        AlunoController controller = new AlunoController();
-        controller.iniciar();
-
+        HealthController.start();
     }
 }

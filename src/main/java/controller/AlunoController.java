@@ -5,7 +5,7 @@ import model.Aluno;
 
 import java.util.Scanner;
 
-public class AlunoController {
+public class  AlunoController {
 
     private AlunoService service = new AlunoService();
 
@@ -19,6 +19,7 @@ public class AlunoController {
             System.out.println("2 - Listar");
             System.out.println("3 - Deletar");
             System.out.println("4 - Sair");
+
 
             String opcao = leitor.nextLine();
 

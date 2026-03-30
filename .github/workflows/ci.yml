@@ -2,18 +2,21 @@ name: Baroes da pisadinha - Java CI CD
 
 on:
   push:
-    branches: [ "main", "feat/Franciellyariel" ]
+
+    branches: [ "feat/Franciellyariel" ]
   pull_request:
-    branches: [ "main", "feat/Franciellyariel" ]
+    branches: [ "feat/Franciellyariel" ]
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
       - name: Set up JDK 22 (GraalVM)
         uses: actions/setup-java@v4
@@ -23,11 +26,9 @@ jobs:
           cache: maven
 
       - name: Permission for Maven Wrapper
-
         run: chmod +x mvnw
 
       - name: Build with Maven
-
         run: ./mvnw clean compile
 
       - name: Run Unit Tests
@@ -35,13 +36,15 @@ jobs:
 
   containerize:
     needs: [build-and-test]
+
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -56,8 +59,10 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/uniesptech:latest
+
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/uniesptech:${{ github.ref_name }}
+            ghcr.io/${{ github.repository_owner }}/uniesptech:${{ github.actor }}-latest

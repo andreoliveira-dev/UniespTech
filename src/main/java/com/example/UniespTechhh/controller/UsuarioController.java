@@ -48,4 +48,10 @@ public class UsuarioController {
         servico.deletarPorId(id);
         return "O meliante de ID " + id + " foi removido com sucesso!";
     }
+
+    @GetMapping("/health")
+    public String healthCheck() {
+        // Aqui a gente avisa que o Barão da Pisadinha tá online
+        return "{\"status\": \"UP\", \"message\": \"Sistema UniespTech operacional e o H2 tá vivinho!\"}";
+    }
 }

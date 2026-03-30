@@ -25,6 +25,15 @@ jobs:
       - name: Run Unit Tests
         run: mvn test
 
+      - name: Package JAR
+        run: mvn package -DskipTests
+
+      - name: Upload JAR Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ github.sha }}
+          path: target/*.jar
+
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
         if: always()

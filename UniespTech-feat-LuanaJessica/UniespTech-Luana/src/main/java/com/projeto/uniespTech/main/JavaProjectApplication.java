@@ -1,4 +1,4 @@
-package com.Projeto.UniespTech.main;
+package com.projeto.uniespTech.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -32,9 +32,9 @@ COPY --from=build /app/target/uniesp-tech.jar uniesp-tech.jar
 
 # Variáveis de ambiente — devem ser fornecidas ao rodar o container.
 # Exemplo: docker run -e DB_URL=... -e DB_USUARIO=... -e DB_SENHA=...
-ENV DB_URL=""
-ENV DB_USUARIO=""
-ENV DB_SENHA=""
+ENV DB_URL="jdbc:postgresql://postgres:5432/uniesp"
+ENV DB_USUARIO="postgres"
+ENV DB_SENHA="1404"
 
 # Executa o sistema
 ENTRYPOINT ["java", "-jar", "uniesp-tech.jar"]

@@ -1,6 +1,6 @@
-package repository;
+package src.java.repository;
 
-import model.Aluno;
+import src.java.model.Aluno;
 import java.util.List;
 
 public interface AlunoRepository {

@@ -1,6 +1,6 @@
-package repository;
+package src.java.repository;
 
-import model.Aluno;
+import src.java.model.Aluno;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,6 +1,6 @@
-package repository;
+package src.java.repository;
 
-import model.Aluno;
+import src.java.model.Aluno;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class AlunoRepositoryPostgres implements AlunoRepository {
 
     private void criarTabelaSeNaoExistir() {
         String sql = """
-                CREATE IF NOT EXISTS alunos (
+                CREATE TABLE IF NOT EXISTS alunos (
                 id SERIAL PRIMARY KEY,
                 nome VARCHAR(150) NOT NULL,
                 cpf CHAR(11)      NOT NULL UNIQUE

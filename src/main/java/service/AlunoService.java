@@ -1,9 +1,9 @@
-package src.java.service;
+package service;
 
-import src.model.Aluno;
+import model.Aluno;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import src.java.repository.AlunoRepository;
+import repository.AlunoRepository;
 
 import java.util.List;
 

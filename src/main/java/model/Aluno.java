@@ -1,4 +1,4 @@
-package src.java.model;
+package model;
 
 public class Aluno {
 

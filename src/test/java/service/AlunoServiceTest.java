@@ -15,13 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AlunoServiceTest {
 
-    //repositorio fake para n depender do banco.
-    private AlunoRepository repositoryFake;
     private AlunoService service;
 
     @BeforeEach
     void setUp() {
-        repositoryFake = new AlunoRepositoryFake();
+        //repositorio fake para n depender do banco.
+        AlunoRepository repositoryFake = new AlunoRepositoryFake();
         service = new AlunoService(repositoryFake);
     }
 
@@ -122,7 +121,7 @@ public class AlunoServiceTest {
             service.cadastrar("João Silva", "12345678901");
             List<Aluno> alunos = service.listarTodos();
             assertEquals(1, alunos.size());
-            assertEquals("João Silva", alunos.get(0).getNome());
+            assertEquals("João Silva", alunos.getFirst().getNome());
         }
 
     }

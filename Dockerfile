@@ -3,7 +3,10 @@ FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
 WORKDIR /app
 
-COPY . .
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+COPY src ./src
 
 RUN mvn clean package -DskipTests
 
@@ -13,6 +16,9 @@ FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar
+
+RUN addgroup --system app && adduser --system app --ingroup app
+USER app
 
 EXPOSE 8080
 

@@ -23,6 +23,19 @@ public class AlunoService {
 
         logger.info("Iniciando cadastro do aluno: {}", alunoDTO.nome());
 
+        //validar o nome
+        if (alunoDTO.nome() == null || alunoDTO.nome().isBlank()) {
+            logger.error("Nome inválido");
+            throw new IllegalArgumentException("Nome é obrigatório");
+        }
+
+        //validar cpf
+        if (alunoDTO.cpf() == null || !alunoDTO.cpf().matches("\\d{11}")) {
+            logger.error("CPF inválido: {}", alunoDTO.cpf());
+            throw new IllegalArgumentException("CPF inválido");
+        }
+
+        //verificar se o cpf está duplicado/já foi cadastrado
         if (alunoRepository.existsByCpf(alunoDTO.cpf())) {
             logger.error("CPF já cadastrado: {}", alunoDTO.cpf());
             throw new IllegalArgumentException("Aluno já cadastrado!");

@@ -5,47 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="estrutura">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/controller/AlunoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/controller/HealthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/service/AlunoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/migration/V1__create-table-aluno.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/Projeto/UniespTech/main/model/Aluno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/Projeto/UniespTech/main/repository/AlunoRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/Projeto/UniespTech/main/service/AlunoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migration/V1__create-table-aluno.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/Project/ApplicationTests/JavaProjectApplicationTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uniesp-tech.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/SistemaUniesp.java" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaUniesp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/JavaProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/JavaProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/java/com/projeto/uniespTech/main/SistemaUniesp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/SistemaUniesp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/java/com/projeto/uniespTech/main/controller/AlunoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/java/com/projeto/uniespTech/main/dto/AlunoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/dto/AlunoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/java/com/projeto/uniespTech/main/model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/model/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/java/com/projeto/uniespTech/main/repository/AlunoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/repository/AlunoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/java/com/projeto/uniespTech/main/service/AlunoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/main/resources/migration/V1__create-table-aluno.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/src/test/java/com/Project/ApplicationTests/JavaProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Project/ApplicationTests/JavaProjectApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/com/Projeto/UniespTech/main/controller/AlunoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Projeto/UniespTech/main/controller/AlunoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/com/Projeto/UniespTech/main/dto/AlunoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Projeto/UniespTech/main/dto/AlunoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/com/Projeto/UniespTech/main/model/Aluno.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/com/Projeto/UniespTech/main/repository/AlunoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/com/Projeto/UniespTech/main/service/AlunoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/migration/V1__create-table-aluno.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/classes/org/example/SistemaUniesp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/SistemaUniesp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniespTech-feat-LuanaJessica/UniespTech-Luana/target/test-classes/com/Project/ApplicationTests/JavaProjectApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/service/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/service/AlunoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Project/ApplicationTests/JavaProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Project/ApplicationTests/JavaProjectApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

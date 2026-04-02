@@ -6,7 +6,7 @@ import com.projeto.uniespTech.main.JavaProjectApplication;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = JavaProjectApplication.class)
+
 class JavaProjectApplicationTests {
 
 	@Test

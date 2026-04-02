@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="estrutura">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/service/AlunoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/service/AlunoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Project/ApplicationTests/JavaProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Project/ApplicationTests/JavaProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +34,12 @@
     &quot;assignee&quot;: &quot;luana-jessica-F&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/andreoliveira-dev/UniespTech.git",
-    "accountId": "1a726681-46a8-41e3-bade-772afb5f87a9"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/andreoliveira-dev/UniespTech.git&quot;,
+    &quot;accountId&quot;: &quot;1a726681-46a8-41e3-bade-772afb5f87a9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -63,7 +62,7 @@
     "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
     "git-widget-placeholder": "#23 on feat/luana-jessica",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/luana/Downloads/UniespTech-feat-LuanaJessicagit/UniespTech-feat-LuanaJessica",
+    "last_opened_file_path": "C:/Users/luana/Downloads/UniespTech-feat-LuanaJessicagit",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/untitled/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Project",
@@ -73,8 +72,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica" />
       <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit" />
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica" />
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\UniespTech-Luana" />
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\.idea" />
       <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\UniespTech-Luana\src\main\java\com\Projeto\UniespTech\main" />

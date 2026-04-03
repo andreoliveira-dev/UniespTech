@@ -1,0 +1,5 @@
+controller\AlunoController.class
+repository\AlunoRepository.class
+repository\AlunoRepositoryMemoria.class
+model\Aluno.class
+service\AlunoService.class

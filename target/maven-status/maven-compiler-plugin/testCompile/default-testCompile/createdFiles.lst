@@ -1,0 +1,6 @@
+service\AlunoServiceTest$AlunoRepositoryFake.class
+service\AlunoServiceTest$ValidacoesCpf.class
+service\AlunoServiceTest$ValidacoesNome.class
+service\AlunoServiceTest.class
+service\AlunoServiceTest$CadastroSucesso.class
+service\AlunoServiceTest$ListagemDelecao.class

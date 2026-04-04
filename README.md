@@ -17,6 +17,17 @@ Em **3 semanas**, reconstruir a base deste sistema, aplicar persistência real, 
 
 ---
 
+## Governança
+
+O desenvolvimento foi acompanhado por um quadro Kanban no Trello:
+
+🔗 https://trello.com/b/h1HpyybQ/uniesptech-kanban
+
+- Proibido push direto na `main` — código entra apenas via Pull Request
+- Todo PR requer Code Review de um colega antes do merge
+
+---
+
 ## Tecnologias Utilizadas
 
 | Camada | Tecnologia |

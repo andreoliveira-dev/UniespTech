@@ -213,9 +213,3 @@ Após restaurar o banco, o sistema voltou ao normal automaticamente sem necessid
   "status": "UP"
 }
 ```
-
----
-
-## Semana 4: Prova Prática
-
-Aplicação de uma *Hotfix de Emergência* em tempo real para avaliar o domínio sobre o fluxo DevOps construído.

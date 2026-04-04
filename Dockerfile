@@ -15,7 +15,6 @@ RUN mvn dependency:go-offline --no-transfer-progress
 
 # Copia o restante do código e gera o jar
 COPY src/ ./src/
-COPY SistemaUniesp.java .
 RUN mvn package --no-transfer-progress -DskipTests
 
 # ============================================================

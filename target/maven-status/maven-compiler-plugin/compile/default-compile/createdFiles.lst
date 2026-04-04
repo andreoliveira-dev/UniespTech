@@ -1,10 +1,10 @@
-repository\AlunoRepositoryMemoria.class
-config\ConfiguracaoBanco.class
+repository\AlunoRepositoryPostgres.class
 health\HealthCheckServer.class
 model\Aluno.class
-repository\AlunoRepositoryPostgres.class
 controller\AlunoController.class
 repository\AlunoRepository.class
+repository\AlunoRepositoryMemoria.class
 SistemaUniesp.class
 health\HealthCheckServer$HealthHandler.class
 service\AlunoService.class
+config\ConfiguracaoBanco.class

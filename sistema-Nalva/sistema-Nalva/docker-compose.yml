@@ -1,0 +1,22 @@
+version: '3.8' # Recomendado definir a versão da especificação
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring-app-Nalva
+    ports:
+      - "8080:8080"
+    volumes:
+      - h2_data:/app/data
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      # Configuração para o H2 persistir os dados dentro do volume
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:/app/data/pdm_db
+      - SPRING_H2_CONSOLE_ENABLED=true
+    restart: unless-stopped
+
+volumes:
+  h2_data:
+    driver: local

@@ -1,0 +1,25 @@
+name: Java CI Professional Pipeline
+
+on:
+  push:
+    branches: [ "main", "develop", "feat/sloan" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build and Compile Java
+        run: javac SistemaUniesp.java
+
+      - name: Test Docker Build
+        run: docker build -t uniesp-tech-app .

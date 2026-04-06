@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="estrutura">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/controller/AlunoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/controller/AlunoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/controller/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projeto/uniespTech/main/controller/HealthController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feat/LuanaJessica" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;luana-jessica-F&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/andreoliveira-dev/UniespTech.git&quot;,
+    &quot;accountId&quot;: &quot;1a726681-46a8-41e3-bade-772afb5f87a9&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3AtQZ3pw3xkRZ4Ltubg7pAVRp92" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AlunoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.JavaProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ide.FileNotInSourceRootChecker.no.check&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#23 on feat/luana-jessica&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/luana/Downloads/UniespTech-feat-LuanaJessicagit&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Pichau/Downloads/UniespTech-feat-LuanaJessica/untitled/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit" />
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica" />
+      <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\UniespTech-Luana" />
+      <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\.idea" />
+      <recent name="C:\Users\Pichau\Downloads\UniespTech-feat-LuanaJessica\UniespTech-Luana\src\main\java\com\Projeto\UniespTech\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit" />
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica\src\test\java" />
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica\src\main\java" />
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica\src\main" />
+      <recent name="C:\Users\luana\Downloads\UniespTech-feat-LuanaJessicagit\UniespTech-feat-LuanaJessica\src\main\java\com\projeto\uniespTech\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Project.ApplicationTests.service" />
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2c8618f-1a6c-413e-944d-742bc473fe07" name="Changes" comment="" />
+      <created>1773409439258</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773409439258</updated>
+    </task>
+    <task id="LOCAL-00001" summary="maven">
+      <option name="closed" value="true" />
+      <created>1773411593136</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773411593136</updated>
+    </task>
+    <task id="LOCAL-00002" summary="maven">
+      <option name="closed" value="true" />
+      <created>1773411934076</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773411934076</updated>
+    </task>
+    <task id="LOCAL-00003" summary="maven">
+      <option name="closed" value="true" />
+      <created>1773412515980</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773412515980</updated>
+    </task>
+    <task id="LOCAL-00004" summary="maven">
+      <option name="closed" value="true" />
+      <created>1773538234727</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773538234727</updated>
+    </task>
+    <task id="LOCAL-00005" summary=".idea">
+      <option name="closed" value="true" />
+      <created>1773538500466</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773538500466</updated>
+    </task>
+    <task id="LOCAL-00006" summary="aluno">
+      <option name="closed" value="true" />
+      <created>1773539705399</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539705399</updated>
+    </task>
+    <task id="LOCAL-00007" summary="aluno">
+      <option name="closed" value="true" />
+      <created>1773539804971</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539804971</updated>
+    </task>
+    <task id="LOCAL-00008" summary="dto, repository, service">
+      <option name="closed" value="true" />
+      <created>1773539870966</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539870966</updated>
+    </task>
+    <task id="LOCAL-00009" summary="pom">
+      <option name="closed" value="true" />
+      <created>1773539929595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539929595</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mvn">
+      <option name="closed" value="true" />
+      <created>1773539965412</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539965412</updated>
+    </task>
+    <task id="LOCAL-00011" summary="banco + test">
+      <option name="closed" value="true" />
+      <created>1773539992371</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539992371</updated>
+    </task>
+    <task id="LOCAL-00012" summary="banco">
+      <option name="closed" value="true" />
+      <created>1773615238951</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773615238951</updated>
+    </task>
+    <task id="LOCAL-00013" summary="testes">
+      <option name="closed" value="true" />
+      <created>1773617788627</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773617788627</updated>
+    </task>
+    <task id="LOCAL-00014" summary=".">
+      <option name="closed" value="true" />
+      <created>1774040364875</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1774040364875</updated>
+    </task>
+    <task id="LOCAL-00015" summary="imports e properties">
+      <option name="closed" value="true" />
+      <created>1774143294323</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1774143294323</updated>
+    </task>
+    <task id="LOCAL-00016" summary="db e correcoes">
+      <option name="closed" value="true" />
+      <created>1774145024779</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1774145024779</updated>
+    </task>
+    <task id="LOCAL-00017" summary="db e correcoes">
+      <option name="closed" value="true" />
+      <created>1774231492454</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1774231492454</updated>
+    </task>
+    <task id="LOCAL-00018" summary=".idea">
+      <option name="closed" value="true" />
+      <created>1774231790212</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1774231790212</updated>
+    </task>
+    <task id="LOCAL-00019" summary="serv">
+      <option name="closed" value="true" />
+      <created>1774232730769</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1774232730769</updated>
+    </task>
+    <task id="LOCAL-00020" summary="CI">
+      <option name="closed" value="true" />
+      <created>1774591568187</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1774591568187</updated>
+    </task>
+    <task id="LOCAL-00021" summary="CI">
+      <option name="closed" value="true" />
+      <created>1774666186255</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1774666186255</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="maven" />
+    <MESSAGE value="aluno" />
+    <MESSAGE value="dto, repository, service" />
+    <MESSAGE value="pom" />
+    <MESSAGE value="mvn" />
+    <MESSAGE value="banco + test" />
+    <MESSAGE value="banco" />
+    <MESSAGE value="testes" />
+    <MESSAGE value="." />
+    <MESSAGE value="imports e properties" />
+    <MESSAGE value="db e correcoes" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="serv" />
+    <MESSAGE value="CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="CI" />
+  </component>
+</project>

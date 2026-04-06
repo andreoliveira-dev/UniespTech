@@ -1,65 +1,60 @@
-import java.util.ArrayList;
+import java.sql.*;
 import java.util.Scanner;
 
-
 public class SistemaUniesp {
-    
-
-    static ArrayList<String> alunos_nomes = new ArrayList<>();
-    static ArrayList<String> alunos_cpfs = new ArrayList<>();
+    // Configurações do Banco (conectando via Docker Compose)
+    private static final String URL = "jdbc:postgresql://db:5432/uniesp_db";
+    private static final String USER = "sloan";
+    private static final String PASS = "holding123";
 
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         
-        while (true) {
-            System.out.println("======= SISTEMA ACADÊMICO UNIESP TECH =======");
-            System.out.println("1 - Cadastrar Aluno");
-            System.out.println("2 - Listar Alunos");
-            System.out.println("3 - Deletar Tudo (CUIDADO!)");
-            System.out.println("4 - Sair");
-            System.out.print("Escolha: ");
-            
-            String opcao = leitor.nextLine();
+        System.out.println("======= SISTEMA ACADÊMICO UNIESP TECH (PRO) =======");
+        
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
+            System.out.println("[DB] Conexão estabelecida com sucesso!");
 
-            if (opcao.equals("1")) {
-                System.out.print("Nome do Aluno: ");
-                String nome = leitor.nextLine();
-                System.out.print("CPF (Somente números): ");
-                String cpf = leitor.nextLine();
+            // Criar tabela automaticamente se não existir
+            String createTable = "CREATE TABLE IF NOT EXISTS alunos (id SERIAL PRIMARY KEY, nome TEXT, cpf TEXT)";
+            conn.createStatement().execute(createTable);
 
-
-                if (nome.isEmpty()) {
-                    System.out.println("ERRO: Nome não pode ser vazio!");
-                } else if (cpf.length() != 11) {
-                    System.out.println("ERRO: CPF Inválido! Deve ter 11 dígitos.");
-                } else {
-                    alunos_nomes.add(nome);
-                    alunos_cpfs.add(cpf);
-                    System.out.println("Aluno cadastrado com sucesso!");
-                }
-
-            } else if (opcao.equals("2")) {
-                System.out.println("--- LISTA DE ALUNOS ---");
-
-                for (int i = 0; i < alunos_nomes.size(); i++) {
-                    System.out.println("ID: " + i + " | Nome: " + alunos_nomes.get(i) + " | CPF: " + alunos_cpfs.get(i));
-                }
+            while (true) {
+                System.out.println("\n1 - Cadastrar Aluno");
+                System.out.println("2 - Listar Alunos");
+                System.out.println("3 - Sair");
+                System.out.print("Escolha: ");
                 
-            } else if (opcao.equals("3")) {
-                // Bug clássico: Sem confirmação de segurança
-                alunos_nomes.clear();
-                alunos_cpfs.clear();
-                System.out.println("Todos os dados foram apagados!");
+                int opcao = leitor.nextInt();
+                leitor.nextLine(); 
 
-            } else if (opcao.equals("4")) {
-                System.out.println("Encerrando sistema...");
-                break;
-            } else {
-                System.out.println("Opção inválida!");
+                if (opcao == 1) {
+                    System.out.print("Nome: ");
+                    String nome = leitor.nextLine();
+                    System.out.print("CPF: ");
+                    String cpf = leitor.nextLine();
+
+                    String sql = "INSERT INTO alunos (nome, cpf) VALUES (?, ?)";
+                    PreparedStatement pstmt = conn.prepareStatement(sql);
+                    pstmt.setString(1, nome);
+                    pstmt.setString(2, cpf);
+                    pstmt.executeUpdate();
+                    System.out.println(">>> Aluno salvo permanentemente no PostgreSQL!");
+
+                } else if (opcao == 2) {
+                    System.out.println("\n--- LISTA DE ALUNOS (BANCO DE DADOS) ---");
+                    ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alunos");
+                    while (rs.next()) {
+                        System.out.println("ID: " + rs.getInt("id") + " | Nome: " + rs.getString("nome") + " | CPF: " + rs.getString("cpf"));
+                    }
+                } else if (opcao == 3) {
+                    System.out.println("Encerrando sistema...");
+                    break;
+                }
             }
-            
-            System.out.println("\n");
+        } catch (SQLException e) {
+            System.err.println("ERRO DE CONEXÃO: " + e.getMessage());
+            System.out.println("Dica: Certifique-se de rodar com 'docker-compose up'");
         }
-        leitor.close();
     }
 }

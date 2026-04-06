@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # O seu sistema acadêmico
+  app:
+    build: .
+    container_name: uniesp-app
+    stdin_open: true # Necessário para o Scanner do Java funcionar
+    tty: true        # Necessário para o Scanner do Java funcionar
+    depends_on:
+      - db
+    environment:
+      - DB_URL=jdbc:postgresql://db:5432/uniesp_db
+      - DB_USER=sloan
+      - DB_PASS=holding123
+
+  # O Banco de Dados PostgreSQL
+  db:
+    image: postgres:15-alpine
+    container_name: uniesp-db
+    environment:
+      - POSTGRES_DB=uniesp_db
+      - POSTGRES_USER=sloan
+      - POSTGRES_PASSWORD=holding123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

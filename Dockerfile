@@ -1,23 +1,23 @@
-# Stage 1: Build da aplicação (Compilação)
-FROM eclipse-temurin:17-jdk-alpine AS builder
-
+# Stage 1: Build (Compilação e Testes)
+FROM maven:3.8.4-openjdk-17-slim AS builder
 WORKDIR /app
 
-# Copia o código e o driver para o estágio de build
-COPY SistemaUniesp.java .
-COPY postgresql-42.7.2.jar .
+# Copia apenas o pom.xml primeiro (otimiza o cache do Docker)
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Compila o Java avisando que o driver existe (Classpath)
-RUN javac -cp .:postgresql-42.7.2.jar SistemaUniesp.java
+# Copia o código fonte e os testes
+COPY src ./src
 
-# Stage 2: Imagem final de execução (Runtime)
+# Roda os testes unitários e gera o arquivo .jar
+RUN mvn clean package
+
+# Stage 2: Runtime (Execução)
 FROM eclipse-temurin:17-jre-alpine
-
 WORKDIR /app
 
-# Copia o arquivo compilado e o driver para a imagem final
-COPY --from=builder /app/SistemaUniesp.class .
-COPY --from=builder /app/postgresql-42.7.2.jar .
+# Copia apenas o .jar gerado no estágio anterior
+COPY --from=builder /app/target/uniesp-tech-1.0-SNAPSHOT.jar app.jar
 
-# Comando para rodar incluindo o driver no Classpath
-ENTRYPOINT ["java", "-cp", ".:postgresql-42.7.2.jar", "SistemaUniesp"]
+# Comando para rodar a aplicação
+ENTRYPOINT ["java", "-jar", "app.jar"]

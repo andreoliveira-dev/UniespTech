@@ -1,3 +1,5 @@
+package br.com.uniesp;
+
 import java.sql.*;
 import java.util.Scanner;
 

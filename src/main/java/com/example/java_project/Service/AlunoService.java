@@ -3,6 +3,7 @@ package com.example.java_project.Service;
 import com.example.java_project.Dto.AlunoDto;
 import com.example.java_project.Model.Aluno;
 import com.example.java_project.Repository.AlunoRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +34,8 @@ public class AlunoService {
         return repository.findAll();
     }
 
-    public void DeletarTodosAlunos()
-    {
+    @Transactional
+    public void DeletarTodosAlunos() {
+        repository.deleteAll();
     }
 }

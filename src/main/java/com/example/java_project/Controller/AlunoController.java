@@ -33,10 +33,8 @@ public class AlunoController {
     }
 
     @DeleteMapping("/deletar/todos")
-    public ResponseEntity<String> deletarTodosAlunos ()
-    {
+    public ResponseEntity<String> deletarTodosAlunos() {
         alunoService.DeletarTodosAlunos();
-
-        return ResponseEntity.ok("Todos os alunos foram deletados");
+        return ResponseEntity.ok("Todos os alunos Foram deletados");
     }
 }

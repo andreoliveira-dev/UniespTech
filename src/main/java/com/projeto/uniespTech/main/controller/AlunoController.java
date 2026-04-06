@@ -18,18 +18,18 @@ public class AlunoController {
 
     private final AlunoService alunoService;
 
-    @GetMapping("/alunos")
+    @GetMapping
     public ResponseEntity<List<Aluno>> listarAlunos() {
         return ResponseEntity.ok(alunoService.listarAlunos());
     }
 
-    @PostMapping("/alunos")
+    @PostMapping
     public ResponseEntity<Aluno> cadastrarAluno(@RequestBody @Valid AlunoDTO alunoDTO) {
         Aluno aluno = alunoService.cadastrarAluno(alunoDTO);
         return ResponseEntity.ok(aluno);
     }
 
-    @DeleteMapping("/alunos")
+    @DeleteMapping
     public ResponseEntity<Void> deletarAlunos() {
         alunoService.deletarAlunos();
         return ResponseEntity.noContent().build();

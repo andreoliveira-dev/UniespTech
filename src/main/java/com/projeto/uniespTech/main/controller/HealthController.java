@@ -10,4 +10,9 @@ public class HealthController {
     public String health() {
         return "OK";
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "API está funcionando!";
+    }
 }

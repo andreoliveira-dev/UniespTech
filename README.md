@@ -32,7 +32,51 @@ https://uniesptech-1.onrender.com/actuator/health
 }
 ```
 
+# Endpoints da API
+
+- Listar alunos
+
+```
+GET /alunos
+```
+
+- Cadastrar aluno
+- 
+```
+POST /alunos
+```
+
+```body:
+{
+"nome": "Luana",
+"cpf": "12345678901"
+}
+```
+
+- Deletar todos os alunos
+
+```
+DELETE /alunos
+```
+
 ---
+
+# Teste rápido
+
+Após subir a aplicação:
+
+http://localhost:8080/health
+http://localhost:8080/alunos
+
+```Exemplo de resposta
+[
+{
+"id": 1,
+"nome": "Luana",
+"cpf": "12345678901"
+}
+]
+```
 
 # Funcionalidades
 
@@ -69,7 +113,7 @@ docker-compose up --build
 A aplicação ficará disponível em:
 
 ```text
-http://localhost:8080
+http://localhost:8080/alunos
 ```
 
 ---

@@ -1,0 +1,27 @@
+name: Java CI Professional Pipeline
+
+on:
+  push:
+    branches: [ "feat/sloan", "main" ]
+  pull_request:
+    branches: [ "feat/sloan", "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Build and Test with Maven
+      run: mvn -B clean package
+
+    - name: Test Docker Build
+      run: docker build -t uniesptech-app .

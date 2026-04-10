@@ -1,6 +1,6 @@
 import controller.AlunoController;
 import model.Aluno;
-import repository.AlunoRepositoryMemoria;
+import repository.AlunoRepositoryPostgres;
 import service.AlunoService;
 
 import java.util.List;
@@ -10,9 +10,9 @@ public class SistemaUniesp {
 
     public static void main(String[] args) {
 
-        AlunoRepositoryMemoria repository = new AlunoRepositoryMemoria();
-        AlunoService           service    = new AlunoService(repository);
-        AlunoController        controller = new AlunoController(service);
+        AlunoRepositoryPostgres repository = new AlunoRepositoryPostgres();
+        AlunoService            service    = new AlunoService(repository);
+        AlunoController         controller = new AlunoController(service);
 
         Scanner leitor = new Scanner(System.in);
 

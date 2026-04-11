@@ -4,7 +4,10 @@ import java.sql.*;
 import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class SistemaUniesp {
     // Logger Profissional (Semana 3 - Monitoramento)
     private static final Logger logger = LoggerFactory.getLogger(SistemaUniesp.class);
@@ -15,7 +18,7 @@ public class SistemaUniesp {
     private static final String PASS = "holding123";
 
     public static void main(String[] args) {
-    SpringApplication.run(SistemaUniesp.class, args);
+        SpringApplication.run(SistemaUniesp.class, args);
         logger.info("Sistema Uniesp iniciado com sucesso!");
     }
 
@@ -27,7 +30,7 @@ public class SistemaUniesp {
                 logger.info("[HEALTH: OK] Conexão com PostgreSQL estabelecida.");
                 
                 // Garante que a tabela existe
-                String createTable = "CREATE TABLE IF NOT EXISTS alunos (id SERIAL PRIMARY KEY, nome TEXT NOT NULL)";
+                String createTable = "CREATE TABLE IF NOT EXISTS alunos (id SERIAL PRIMARY KEY, nome TEXT NOT NULL);";
                 conn.createStatement().execute(createTable);
                 return true;
             }

@@ -16,7 +16,7 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copia apenas o .jar gerado no estágio anterior
-COPY --from=builder /app/target/uniesp-tech-1.0-SNAPSHOT.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
 
 # Comando para rodar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]

@@ -22,38 +22,6 @@ public class SistemaUniesp {
             logger.warn("O sistema iniciou, mas o Banco de Dados parece estar offline.");
         }
 
-        Scanner leitor = new Scanner(System.in);
-        int opcao = 0;
-
-        while (opcao != 3) {
-            System.out.println("\n--- MENU UNIESP TECH ---");
-            System.out.println("1 - Cadastrar Aluno");
-            System.out.println("2 - Listar Alunos");
-            System.out.println("3 - Sair");
-            System.out.print("Escolha: ");
-            
-            try {
-                opcao = Integer.parseInt(leitor.nextLine());
-            } catch (NumberFormatException e) {
-                logger.error("Entrada inválida detectada no menu.");
-                continue;
-            }
-
-            switch (opcao) {
-                case 1:
-                    cadastrarAluno(leitor);
-                    break;
-                case 2:
-                    listarAlunos();
-                    break;
-                case 3:
-                    logger.info("Encerrando o sistema com segurança...");
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-            }
-        }
-        leitor.close();
     }
 
     // Método de Health Check (Semana 3 - Monitoramento)

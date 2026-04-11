@@ -9,8 +9,7 @@ RUN mvn dependency:go-offline
 # Copia o código fonte e os testes
 COPY src ./src
 
-# Roda os testes unitários e gera o arquivo .jar
-RUN mvn clean package -DskipTests -Dmaven.test.skip=true
+RUN mvn clean install -DskipTests -Dmaven.test.skip=true -Dspring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 # Stage 2: Runtime (Execução)
 FROM eclipse-temurin:17-jre-alpine

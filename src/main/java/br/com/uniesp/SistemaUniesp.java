@@ -6,71 +6,51 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@RestController
 public class SistemaUniesp {
-    // Logger Profissional (Semana 3 - Monitoramento)
     private static final Logger logger = LoggerFactory.getLogger(SistemaUniesp.class);
 
-    // Configurações do Banco (Conectando via Docker Compose)
-    private static final String URL = "jdbc:postgresql://db:5432/uniesp_db";
-    private static final String USER = "sloan";
-    private static final String PASS = "holding123";
+    // Configurações do Banco via Variáveis de Ambiente (Padrão para Render/Docker)
+    private static final String URL = System.getenv("DATABASE_URL") != null ? 
+                                      System.getenv("DATABASE_URL") : 
+                                      "jdbc:postgresql://db:5432/uniesp_db";
+    private static final String USER = System.getenv("DATABASE_USER") != null ? 
+                                       System.getenv("DATABASE_USER") : 
+                                       "sloan";
+    private static final String PASS = System.getenv("DATABASE_PASSWORD") != null ? 
+                                       System.getenv("DATABASE_PASSWORD") : 
+                                       "holding123";
 
     public static void main(String[] args) {
         SpringApplication.run(SistemaUniesp.class, args);
         logger.info("Sistema Uniesp iniciado com sucesso!");
     }
 
-    // Método de Health Check (Semana 3 - Monitoramento)
+    @GetMapping("/")
+    public String home() {
+        return "Sistema Uniesp Tech Online! Use /health para verificar o banco.";
+    }
+
+    @GetMapping("/health")
+    public String health() {
+        if (checkSystemHealth()) {
+            return "{\"status\": \"UP\", \"database\": \"CONNECTED\"}";
+        } else {
+            return "{\"status\": \"UP\", \"database\": \"DISCONNECTED\"}";
+        }
+    }
+
     public static boolean checkSystemHealth() {
-        logger.info("Executando Health Check (Verificação de Saúde)...");
+        logger.info("Executando Health Check...");
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-            if (conn.isValid(2)) {
-                logger.info("[HEALTH: OK] Conexão com PostgreSQL estabelecida.");
-                
-                // Garante que a tabela existe
-                String createTable = "CREATE TABLE IF NOT EXISTS alunos (id SERIAL PRIMARY KEY, nome TEXT NOT NULL);";
-                conn.createStatement().execute(createTable);
-                return true;
-            }
+            return conn.isValid(2);
         } catch (SQLException e) {
-            logger.error("[HEALTH: CRITICAL] Falha ao conectar no banco de dados!");
-        }
-        return false;
-    }
-
-    private static void cadastrarAluno(Scanner leitor) {
-        System.out.print("Nome do Aluno: ");
-        String nome = leitor.nextLine();
-
-        if (nome.trim().isEmpty()) {
-            logger.warn("Tentativa de cadastro com nome vazio bloqueada.");
-            return;
-        }
-
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-            String sql = "INSERT INTO alunos (nome) VALUES (?)";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, nome);
-            stmt.executeUpdate();
-            logger.info("Aluno '{}' cadastrado com sucesso no PostgreSQL.", nome);
-        } catch (SQLException e) {
-            logger.error("Erro ao cadastrar aluno: {}", e.getMessage());
-        }
-    }
-
-    private static void listarAlunos() {
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-            String sql = "SELECT * FROM alunos";
-            ResultSet rs = conn.createStatement().executeQuery(sql);
-            System.out.println("\n--- LISTA DE ALUNOS ---");
-            while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("id") + " | Nome: " + rs.getString("nome"));
-            }
-            logger.info("Listagem de alunos realizada com sucesso.");
-        } catch (SQLException e) {
-            logger.error("Erro ao listar alunos: {}", e.getMessage());
+            logger.error("Falha na conexão com o banco: {}", e.getMessage());
+            return false;
         }
     }
 }

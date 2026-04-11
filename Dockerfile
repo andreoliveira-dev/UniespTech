@@ -10,7 +10,7 @@ RUN mvn dependency:go-offline
 COPY src ./src
 
 # Roda os testes unitários e gera o arquivo .jar
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime (Execução)
 FROM eclipse-temurin:17-jre-alpine

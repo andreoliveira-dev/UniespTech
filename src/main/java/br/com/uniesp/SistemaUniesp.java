@@ -15,13 +15,8 @@ public class SistemaUniesp {
     private static final String PASS = "holding123";
 
     public static void main(String[] args) {
-        logger.info("======= INICIANDO SISTEMA ACADÊMICO UNIESP TECH (PRO) =======");
-        
-        // Executa o Health Check antes de abrir o menu
-        if (!checkSystemHealth()) {
-            logger.warn("O sistema iniciou, mas o Banco de Dados parece estar offline.");
-        }
-
+    SpringApplication.run(SistemaUniesp.class, args);
+        logger.info("Sistema Uniesp iniciado com sucesso!");
     }
 
     // Método de Health Check (Semana 3 - Monitoramento)
